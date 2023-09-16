@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<title>Скорость нажатий</title>
+		<link type="text/css" rel="stylesheet" href="Speed.css">
+		<script src="Speed.js"></script>
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+	</head>
+
+	<body>
+		<img id="fly" src="Pictures/srart.png" alt="Ракета"> 
+		<img id="planeta" src="Pictures/mars5.png" alt="Планета">
+
+		<canvas id="canvas_plot" width="550" height="250"></canvas>
+
+		<div id="time">Время: 10 </div>
+		<div id="msg">Ваше количество нажатий: 0 </div>
+
+		<form>
+			<br>
+			<input text="text" id="userName" size="23" placeholder="Ведите имя!">
+			<p>Введите имя и жмите на кнопку</p> 
+		</form>
+		
+		<ol id="record">
+			<h3> Таблица рекордов </h3>	
+			<li>139 Автор</li>
+		</ol>
+
+		<div >
+			<input type="button"  id="click" value="Жми!"> <br>
+			<input type="button" id="refresh" value="Заново!" onClick="refr();">
+		</div>
+	</body>
+</html>
