@@ -694,7 +694,7 @@ li {
     color: #F8FF00;
     background: rgba(204,0,0,0.79);
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .0);
-    padding: 58px 18px;
+    padding: 9% 19%;
   }
 
   #planeta {
@@ -859,6 +859,6 @@ li {
     top: 650px;
     margin-left: -275px;
     background: rgba(159, 162, 207, 0.301);
-    scale: 0.85;
+    scale: 0.6;
   }
 }
