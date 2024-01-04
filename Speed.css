@@ -397,88 +397,6 @@ li {
   }
 }
 
-  @media (max-width: 880px) {
-    body {
-        background-color: rgba(3, 40, 107, 0.74);
-    }
-    
-    #page {
-        padding-bottom: 20px;
-        margin: 100px 100px;
-        border: 2px solid #000;
-        border-radius: 10px;
-        text-align: center;
-        background-color: rgb(34, 128, 241);
-    }
-    
-    #field {
-        background-color: rgba(34, 127, 241, 0.674);
-        padding: 100px 0px;
-        
-    }
-    
-    #rC1,#rC2,#rC3{
-        padding: 10px 15px;
-        border-radius: 20px;
-        background-color: coral;
-        font-size: 16px;
-    }
-    #act {
-        
-        padding: 10px 15px;
-        border-radius: 20px;
-        background-color: rgb(255, 68, 0);
-        font-size: 16px;
-        box-shadow: inset 0px 0px 2px;
-        
-    }
-    #rC1:hover, #rC2:hover, #rC3:hover {
-        background-color: #2e9b5b;
-        border: 2px solid #0f502a;
-        color: #ecf0f1;
-        cursor: pointer;
-    }
-    
-    #click1 {
-        padding: 10px 15px;
-        border-radius: 20px;
-        background-color: rgb(23, 246, 15);
-        box-shadow: 0px 0px 1px 10px rgba(0, 255, 42, 0.382);;
-        color: #ecf0f1;
-        font-size: 16px;
-        font-weight: 800;
-        position: absolute;
-    }
-    
-    #click2 {
-        padding: 10px 15px;
-        border-radius: 20px;
-        background-color: rgb(23, 246, 15);
-        box-shadow: 0px 0px 1px 10px rgba(0, 255, 42, 0.382);;
-        color: #ecf0f1;
-        font-size: 20px;
-        font-weight: 800;
-        position: absolute;
-    }
-    
-    #click1:active {
-      
-        border-radius: 20px;
-        background-color: rgb(23, 246, 15);
-        box-shadow: 0px 0px 1px 8px rgba(0, 255, 42, 0.382);;
-        color: #ecf0f1;
-        font-size: 16px;
-        position: absolute;
-    }
-    
-    #result {
-        border: 2px solid #000;
-        padding: 20px 20px;
-        margin: 0px 30px;
-        border-radius: 20px;
-        background-color: rgb(85, 161, 255);
-    }
-    }
 
 @media (max-width: 880px) and (min-width: 550px) {
   #click {
@@ -859,6 +777,6 @@ li {
     top: 650px;
     margin-left: -275px;
     background: rgba(159, 162, 207, 0.301);
-    scale: 0.6;
+    scale: 0.7;
   }
 }
