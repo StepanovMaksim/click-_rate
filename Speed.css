@@ -715,7 +715,7 @@ li {
   
   #record {
     position: absolute;
-    top: 500px;
+    top: 750px;
     left: 1%;
     width: 90%;
     box-shadow: 0 0px 6px 4px rgba(0,60,180,0.35) inset;
@@ -774,7 +774,7 @@ li {
   
   #canvas_plot  {
     position: absolute;
-    top: 650px;
+    top: 500px;
     margin-left: -275px;
     background: rgba(159, 162, 207, 0.301);
     scale: 0.7;
