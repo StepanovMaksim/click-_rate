@@ -1,14 +1,34 @@
 @charset "utf-8";
 
+h1{
+  text-align: center;
+  font-family: fantasy; 
+  font-weight: 500;
+}
+
 dialog {
   position: absolute;
   font-family: fantasy;
+  background-color: #d6fdff;
   font-weight: 500;
+  bottom: 10vh;
   color: #2332ff;
   border-radius: 3vw;
   width: 80vw;
-  height: 80vh;
+  height: 70vh;
   font-size: 4vh;
+}
+
+#close-modal-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  padding: 10px;
+  background-color: #ff6660;
+  border-radius: 8px;
+  font-size: x-large;
+  color: rgb(255, 248, 212);
+  cursor: pointer;
 }
 
 
@@ -204,10 +224,19 @@ li {
 #canvas_plot  {
   position: absolute;
 	top: 100px;
+  right: 1%;
   margin: auto;
   background: rgba(159, 162, 207, 0.301);
   margin-left: 14px;
 }
+
+
+#Animal-img {
+  border-radius: 20px;
+  border: solid 3px #4450ff;
+  width: 20vw;
+}
+
 }
 
 @media (min-width: 1450px) and (max-aspect-ratio: 1) {
@@ -400,13 +429,20 @@ li {
   
   
   #canvas_plot  {
-    position: absolute;
-    top: 100px;
-    margin: auto;
-    background: rgba(159, 162, 207, 0.301);
-    margin-left: 14px;
-  }
-  }
+  position: absolute;
+	top: 100px;
+  right: 1%;
+  margin: auto;
+  background: rgba(159, 162, 207, 0.301);
+  margin-left: 14px;
+}
+
+#Animal-img {
+  border-radius: 20px;
+  border: solid 3px #4450ff;
+  width: 20vw;
+}
+}
 
 @media (max-width: 1450px) and (min-width: 880px) and (min-aspect-ratio: 1.6) {
   #click {
@@ -609,13 +645,19 @@ li {
     background: rgba(159, 162, 207, 0.301);
     margin-left: 14px;
   }
+
+  #Animal-img {
+  border-radius: 20px;
+  border: solid 3px #4450ff;
+  width: 20vw;
+}
 }
 
 @media (max-width: 1450px) and (min-width: 880px) and (max-aspect-ratio: 1.6) {
   #click {
     position: absolute;
-    top: 400px;
-    left: 35%;
+    top: 200px;
+    left: 42%;
     text-decoration: none;
     padding: 60px 20px;
     color: #000000;
@@ -768,7 +810,7 @@ li {
     display: inline-block;
     position: absolute;
     top: 450px;
-    right: 15%;
+    left: 41%;
     line-height: 45px;
     border-radius: 35px;
     margin: 10px 20px;
@@ -804,11 +846,17 @@ li {
   #canvas_plot  {
     position: absolute;
     top: 650px;
-    left:20%;
+    left: 27%;
       margin: auto;
       background: rgba(159, 162, 207, 0.301);
       margin-left: 14px;
   }
+
+  #Animal-img {
+  border-radius: 20px;
+  border: solid 3px #4450ff;
+  width: 20vw;
+}
 }
 
 
@@ -1002,6 +1050,13 @@ li {
     background: rgba(159, 162, 207, 0.301);
     scale: 0.85;
   }
+
+  #Animal-img {
+  border-radius: 20px;
+  border: solid 3px #4450ff;
+  width: 35vw;
+}
+
 }
 
 @media (max-width: 549px) {
@@ -1193,4 +1248,10 @@ li {
     background: rgba(159, 162, 207, 0.301);
     scale: 0.65;
   }
+
+  #Animal-img {
+  border-radius: 20px;
+  border: solid 3px #4450ff;
+  width: 35vw;
+}
 }

@@ -6,55 +6,72 @@ window.onload = init;
 let isModalOpen = false;
 
 const animals = {
-		"1" : {
-			name: "улитка",
-			grade: "медленно("
-		},
-		"2": {
-			name: "мышь",
-			grade: "медленно"
-		},
-		"3": {
-			name: "свин",
-			grade: "поднажми!"
-		},
-		"4": {
-			name: "слон",
-			grade: "поднажми!"
-		},
-		"5": {
-			name: "бегемот",
-			grade: "неплохо!"
-		},
-		"6": {
-			name: "лиса",
-			grade: "Хорошо!"
-		},
-		"7": {
-			name: "медведь",
-			grade: "Хорошо"
-		},
-		"8": {
-			name: "косуля",
-			grade: "Хорошо!"
-		},
-		"9": {
-			name: "заяц",
-			grade: "Отлично!"
-		},
-		"10": {
-			name: "ягуар",
-			grade: "Отлично!"
-		},
-		"11": {
-			name: "гепард",
-			grade: "НЕВЕРОЯТНО!"
-		},
-		"12": {
-			name: "ястреб",
-			grade: "НЕВЕРОЯТНО!"
-		}
-};
+	0: {
+		name: 'улитка',
+		grade: 'медленно',
+		image: 'pictures/snail.jpg',
+	},
+	1: {
+		name: 'черепаха',
+		grade: 'медленно',
+		image: 'pictures/turtle.jpg',
+	},
+	2: {
+		name: 'мышь',
+		grade: 'медленно',
+		image: 'pictures/mouse.jpg',
+	},
+	3: {
+		name: 'свин',
+		grade: 'поднажми!',
+		image: 'pictures/pig.jpg',
+	},
+	4: {
+		name: 'слон',
+		grade: 'поднажми!',
+		image: 'pictures/el.jpg',
+	},
+	5: {
+		name: 'бегемот',
+		grade: 'неплохо!',
+		image: 'pictures/hipp.jpg',
+	},
+	6: {
+		name: 'лиса',
+		grade: 'Хорошо!',
+		image: 'pictures/fox.jpg',
+	},
+	7: {
+		name: 'медведь',
+		grade: 'Хорошо',
+		image: 'pictures/bear.jpg',
+	},
+	8: {
+		name: 'косуля',
+		grade: 'Хорошо!',
+		image: 'pictures/roe.jpg',
+	},
+	9: {
+		name: 'заяц',
+		grade: 'Отлично!',
+		image: 'pictures/hare.jpg',
+	},
+	10: {
+		name: 'ягуар',
+		grade: 'Отлично!',
+		image: 'pictures/jaguar.jpg',
+	},
+	11: {
+		name: 'гепард',
+		grade: 'НЕВЕРОЯТНО!',
+		image: 'pictures/cheetah.jpg',
+	},
+	12: {
+		name: 'ястреб',
+		grade: 'НЕВЕРОЯТНО!',
+		image: 'pictures/hawk.jpg',
+	},
+}
 		
 let i=0,
  	j=11,
@@ -67,19 +84,89 @@ let i=0,
 	u[11]=0;
 
 
-function changeAnimal(speed) {
-	return (speed<10) ? animals[1].name 
-	: (speed>=10 && speed<20) ? animals[2].name
-	: (speed>=20 && speed<30) ? animals[3].name
-	: (speed>=30 && speed<40) ? animals[4].name
-	: (speed>=40 && speed<50) ? animals[5].name
-	: (speed>=50 && speed<60) ? animals[6].name
-	: (speed>=60 && speed<70) ? animals[7].name
-	: (speed>=70 && speed<80) ? animals[8].name
-	: (speed>=80 && speed<90) ? animals[9].name
-	: (speed>=90 && speed<100) ? animals[10].name
-	: (speed>=100 && speed<110) ? animals[11].name
-	: animals[12].name;
+
+function changeAnimalName(speed) {
+	return speed < 5
+		? animals[0].name
+		: speed >= 5 && speed < 10
+		? animals[1].name
+		: speed >= 10 && speed < 20
+		? animals[2].name
+		: speed >= 20 && speed < 30
+		? animals[3].name
+		: speed >= 30 && speed < 40
+		? animals[4].name
+		: speed >= 40 && speed < 50
+		? animals[5].name
+		: speed >= 50 && speed < 60
+		? animals[6].name
+		: speed >= 60 && speed < 70
+		? animals[7].name
+		: speed >= 70 && speed < 80
+		? animals[8].name
+		: speed >= 80 && speed < 90
+		? animals[9].name
+		: speed >= 90 && speed < 100
+		? animals[10].name
+		: speed >= 100 && speed < 110
+		? animals[11].name
+		: animals[12].name
+}
+
+function changeAnimalGrade(speed) {
+	return speed < 5
+		? animals[0].grade
+		: speed >= 5 && speed < 10
+		? animals[1].grade
+		: speed >= 10 && speed < 20
+		? animals[2].grade
+		: speed >= 20 && speed < 30
+		? animals[3].grade
+		: speed >= 30 && speed < 40
+		? animals[4].grade
+		: speed >= 40 && speed < 50
+		? animals[5].grade
+		: speed >= 50 && speed < 60
+		? animals[6].grade
+		: speed >= 60 && speed < 70
+		? animals[7].grade
+		: speed >= 70 && speed < 80
+		? animals[8].grade
+		: speed >= 80 && speed < 90
+		? animals[9].grade
+		: speed >= 90 && speed < 100
+		? animals[10].grade
+		: speed >= 100 && speed < 110
+		? animals[11].grade
+		: animals[12].grade
+}
+
+function changeAnimalImage(speed) {
+	return speed < 5
+		? animals[0].image
+		: speed >= 5 && speed < 10
+		? animals[1].image
+		: speed >= 10 && speed < 20
+		? animals[2].image
+		: speed >= 20 && speed < 30
+		? animals[3].image
+		: speed >= 30 && speed < 40
+		? animals[4].image
+		: speed >= 40 && speed < 50
+		? animals[5].image
+		: speed >= 50 && speed < 60
+		? animals[6].image
+		: speed >= 60 && speed < 70
+		? animals[7].image
+		: speed >= 70 && speed < 80
+		? animals[8].image
+		: speed >= 80 && speed < 90
+		? animals[9].image
+		: speed >= 90 && speed < 100
+		? animals[10].image
+		: speed >= 100 && speed < 110
+		? animals[11].image
+		: animals[12].image
 }
 
 
@@ -91,12 +178,12 @@ function init() {
 }
 
 
-function showResult() {
-	const modal = document.querySelector('dialog');
-	modal.showModal();
-	isModalOpen = true;
+// function showResult() {
+// 	const modal = document.querySelector('dialog');
+// 	modal.showModal();
+// 	isModalOpen = true;
 
-}
+// }
 
 function closeResult() {
 	const modal = document.querySelector('dialog');
@@ -108,6 +195,9 @@ function onClick() {
 	const modalAnimal = document.getElementById('res-animal');
 	const modalImg = document.getElementById('res-img');
 	const modalSpeed = document.getElementById('res-speed');
+	const modalGrade = document.getElementById('res-grade');
+	const imgAnimal = document.createElement('img');
+	
 		
 	rz+=1;	
 	k=1;	
@@ -136,11 +226,22 @@ function onClick() {
 		if (j < 0.04) {
 			clearInterval(id);		 
 			messageTime.innerHTML="Время: 0";
-			let textInput = document.getElementById("userName");
-			let nameGamer = textInput.value;
-			let li = document.createElement("li");
-			li.innerHTML = i+" "+nameGamer;
-			let ol= document.getElementById("record");
+			modalAnimal.innerHTML = changeAnimalName(i).toLocaleUpperCase()
+			modalSpeed.innerHTML = 'Результат: ' + i + ' км/ч'
+			modalGrade.innerHTML = changeAnimalGrade(i)
+			imgAnimal.id = 'Animal-img'
+			imgAnimal.src = changeAnimalImage(i)
+			imgAnimal.alt = changeAnimalName(i)
+			modalImg.append(imgAnimal)
+			const modal = document.querySelector('dialog')
+			modal.showModal()
+			isModalOpen = true
+
+//			let textInput = document.getElementById("userName");
+//			let nameGamer = textInput.value;
+//			let li = document.createElement("li");
+//			li.innerHTML = i+" "+nameGamer;
+//			let ol= document.getElementById("record");
 //			ol.appendChild(li);
 //			sortList();
 		}
@@ -150,13 +251,10 @@ function onClick() {
 			i++;
 			let messageArea= document.getElementById('msg');
 			messageArea.innerHTML="Ваше количество нажатий: "+i;
-			modalAnimal.innerHTML =  changeAnimal(i);
-		  	modalSpeed.innerHTML = i + " км/ч";
 			if (j>1) {
 				var l = Math.floor(10-j);	
 			} else if (j<1) {
 				l = Math.floor(10-j);
-				
 			}
 		}
 	up[l]=i;

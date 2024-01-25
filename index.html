@@ -18,15 +18,16 @@
 			}
 		</style>
 
-		<dialog style="padding: 0" onclick="closeResult()">
+		<dialog style="padding: 0">
 			<div id="modal-box" style="padding: 1rem">
 			<div id="res-animal"></div>
 			<div id="res-img"></div>
 			<div id="res-speed"></div>
-			<button id="close-modal-btn" onclick="closeResult()">Закрыть</button>
+			<div id="res-grade"></div>
+			<button id="close-modal-btn" onclick="closeResult()">X</button>
 			</div>
 		</dialog>
-		<input type="button" id="show-modal-btn" onClick="showResult()" value="Show modal" />
+	
 
 		<img id="fly" src="Pictures/srart.png" alt="Ракета"> 
 		<img id="planeta" src="Pictures/mars5.png" alt="Планета">
@@ -36,11 +37,8 @@
 		<div id="time">Время: 10 </div>
 		<div id="msg">Ваше количество нажатий: 0 </div>
 
-		<form>
-			<br>
-			<input text="text" id="userName" size="23" placeholder="Ведите имя!">
-			<p>Введите имя и жмите на кнопку</p> 
-		</form>
+		<h1>Жмите на кнопку</h1> 
+
 		
 		<!-- <ol id="record">
 			<h3> Таблица рекордов </h3>	
