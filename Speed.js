@@ -1,5 +1,61 @@
+
 window.onload = init;
 
+
+
+let isModalOpen = false;
+
+const animals = {
+		"1" : {
+			name: "улитка",
+			grade: "медленно("
+		},
+		"2": {
+			name: "мышь",
+			grade: "медленно"
+		},
+		"3": {
+			name: "свин",
+			grade: "поднажми!"
+		},
+		"4": {
+			name: "слон",
+			grade: "поднажми!"
+		},
+		"5": {
+			name: "бегемот",
+			grade: "неплохо!"
+		},
+		"6": {
+			name: "лиса",
+			grade: "Хорошо!"
+		},
+		"7": {
+			name: "медведь",
+			grade: "Хорошо"
+		},
+		"8": {
+			name: "косуля",
+			grade: "Хорошо!"
+		},
+		"9": {
+			name: "заяц",
+			grade: "Отлично!"
+		},
+		"10": {
+			name: "ягуар",
+			grade: "Отлично!"
+		},
+		"11": {
+			name: "гепард",
+			grade: "НЕВЕРОЯТНО!"
+		},
+		"12": {
+			name: "ястреб",
+			grade: "НЕВЕРОЯТНО!"
+		}
+};
+		
 let i=0,
  	j=11,
  	a=0.1,
@@ -11,18 +67,48 @@ let i=0,
 	u[11]=0;
 
 
+function changeAnimal(speed) {
+	return (speed<10) ? animals[1].name 
+	: (speed>=10 && speed<20) ? animals[2].name
+	: (speed>=20 && speed<30) ? animals[3].name
+	: (speed>=30 && speed<40) ? animals[4].name
+	: (speed>=40 && speed<50) ? animals[5].name
+	: (speed>=50 && speed<60) ? animals[6].name
+	: (speed>=60 && speed<70) ? animals[7].name
+	: (speed>=70 && speed<80) ? animals[8].name
+	: (speed>=80 && speed<90) ? animals[9].name
+	: (speed>=90 && speed<100) ? animals[10].name
+	: (speed>=100 && speed<110) ? animals[11].name
+	: animals[12].name;
+}
+
 
 function init() {
 	var button1 = document.getElementById("click");
 	button1.onclick = onClick;
-	sortList();	
+//	sortList();	
 	graf(0, 1, 50, 25, 250)
 }
 
 
+function showResult() {
+	const modal = document.querySelector('dialog');
+	modal.showModal();
+	isModalOpen = true;
 
+}
+
+function closeResult() {
+	const modal = document.querySelector('dialog');
+	modal.close();
+	isModalOpen = false;
+}
 
 function onClick() {
+	const modalAnimal = document.getElementById('res-animal');
+	const modalImg = document.getElementById('res-img');
+	const modalSpeed = document.getElementById('res-speed');
+		
 	rz+=1;	
 	k=1;	
 	if (j > 10.9) {
@@ -34,6 +120,7 @@ function onClick() {
 	if ( j == 10 && k == 1) {
 		let id =  setInterval(function rt() {
 		j=Math.floor((j-a)*100)/100;
+		 
 		
 		if (j < 10) {
 			let elems = document.getElementById("planeta");
@@ -43,7 +130,7 @@ function onClick() {
 			button1.onclick = onClick;
 		
   		messageTime.innerHTML="Время: "+j;
-			
+		  
 	}
 		
 		if (j < 0.04) {
@@ -54,8 +141,8 @@ function onClick() {
 			let li = document.createElement("li");
 			li.innerHTML = i+" "+nameGamer;
 			let ol= document.getElementById("record");
-			ol.appendChild(li);
-			sortList();
+//			ol.appendChild(li);
+//			sortList();
 		}
 	}, 100);
 	} 
@@ -63,10 +150,13 @@ function onClick() {
 			i++;
 			let messageArea= document.getElementById('msg');
 			messageArea.innerHTML="Ваше количество нажатий: "+i;
+			modalAnimal.innerHTML =  changeAnimal(i);
+		  	modalSpeed.innerHTML = i + " км/ч";
 			if (j>1) {
 				var l = Math.floor(10-j);	
 			} else if (j<1) {
 				l = Math.floor(10-j);
+				
 			}
 		}
 	up[l]=i;

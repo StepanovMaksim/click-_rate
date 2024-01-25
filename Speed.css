@@ -1,5 +1,18 @@
 @charset "utf-8";
-@media (min-width: 1450px) {
+
+dialog {
+  position: absolute;
+  font-family: fantasy;
+  font-weight: 500;
+  color: #2332ff;
+  border-radius: 3vw;
+  width: 80vw;
+  height: 80vh;
+  font-size: 4vh;
+}
+
+
+@media (min-width: 1450px) and (min-aspect-ratio: 1) {
   
 #click {
 	text-decoration: none;
@@ -197,7 +210,408 @@ li {
 }
 }
 
-@media (max-width: 1450px) and (min-width: 880px) {
+@media (min-width: 1450px) and (max-aspect-ratio: 1) {
+  
+  #click {
+    text-decoration: none;
+    padding: 80px 50px;
+    color: #000000;
+    font-weight: 700;
+    font-size: 40px;
+    margin:  5px 5px;
+    border-radius: 150px;
+    background: rgba(232,0,0,0.79);
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 16px 32px 0 rgba(0, 40, 120, .35);
+    transition: .1s;
+  }
+  
+  #planeta {
+    position: absolute;
+    top: 400px;
+    left: 300px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  p {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  #fly {
+    position: absolute;
+    top: 700px;
+    left: 100px;
+  }
+  
+  
+  form {
+    text-align: center;
+    
+  }
+  
+  #click:active {
+      color: #F8FF00;
+    background: rgba(204,0,0,0.79);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .0);
+    padding: 78px 48px;
+  }
+  div{
+    text-align: center;
+  }
+  
+  
+  #msg, #time {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 270px;
+    height: 40px;
+    border-radius: 10px;
+    z-index: 0;
+   overflow: hidden;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-family: 'Roboto Condensed', sans-serif;   
+  }
+  
+  #msg::before, #time::before{
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -350%;
+    width: 200%;
+    height: 800%;
+    background-color: #EF6C00;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background-image: linear-gradient(#38ef00, #38ef00), linear-gradient(#FFE0B2, #FFE0B2), linear-gradient(#38ef00, #38ef00), linear-gradient(#FFE0B2, #FFE0B2);
+    animation: anim-msg 4s linear infinite;
+  }
+  #msg::after,  #time::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 6px;
+    top: 6px;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    background: white;
+    border-radius: 5px;
+  }
+  
+  @keyframes anim-msg {
+    100% {
+        transform: rotate(1turn);
+    }
+  }
+  
+  @keyframes anim-time {
+    100% {
+        transform: rotate(1turn);
+    }
+  }
+  
+  #time  {
+    position: absolute;
+    top: 20px;
+    left: 300px;
+  
+  }
+  
+  h3 {
+    margin: 0px 0px 8px 0px;
+    text-align: center;
+    font-size: 32px;
+  }
+  
+  body {
+      background-image: url("Pictures/speef.png");	/* фото на фоне */
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+  }
+  
+  #record {
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    width: 400px;
+     padding: 20px 20px 20px 20px;
+    font-size: 20px;
+    box-shadow: 0 0px 6px 4px rgba(0,60,180,0.35) inset;
+    border-radius: 6px;
+    background-color: rgba(0,60,180,0.18);
+  }
+  
+  #userName {
+    font-size: 20px;
+    border-radius: 5px;
+  }
+  
+  #addButton {
+    padding: 5px 5px 3px 5px;
+  }
+  
+  
+  #refresh {
+    text-decoration: none;
+    display: inline-block;
+    
+    line-height: 45px;
+    border-radius: 35px;
+    margin: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #524f4e;
+    padding: 10px;
+    background: rgba(207,255,184,1.00);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    transition: .3s;
+  }
+  
+  #refresh:hover {
+    background: #2EE59D;
+    box-shadow: 0 15px 20px rgba(46, 229, 157, .4);
+    color: white;
+    transform: translateY(-7px);
+  }
+  
+  li {
+    border-style: solid;		/*функции границы блока*/
+    border-color: black;		/*функции границы блока*/
+    border-width: 2px;
+    border-radius: 3px;
+    padding: 3px;
+    margin: 3px;
+    background-color: rgba(186,209,255,0.08);
+  }
+  
+  
+  
+  #canvas_plot  {
+    position: absolute;
+    top: 100px;
+    margin: auto;
+    background: rgba(159, 162, 207, 0.301);
+    margin-left: 14px;
+  }
+  }
+
+@media (max-width: 1450px) and (min-width: 880px) and (min-aspect-ratio: 1.6) {
+  #click {
+    position: absolute;
+    top: 100px;
+    left: 35%;
+    text-decoration: none;
+    padding: 60px 20px;
+    color: #000000;
+    font-weight: 700;
+    font-size: 60px;
+    margin:  5px 5px;
+    border-radius: 150px;
+    background: rgba(232,0,0,0.79);
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 16px 32px 0 rgba(0, 40, 120, .35);
+    transition: .1s;
+  }
+
+  #click:active {
+    color: #F8FF00;
+    background: rgba(204,0,0,0.79);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .0);
+    padding: 58px 18px;
+  }
+
+  #planeta {
+    position: absolute;
+    top: 300px;
+    left: 15%;
+    width: 50px;
+    height: 50px;
+  }
+  
+  #fly {
+    position: absolute;
+    top: 800px;
+    left: 70px;
+  }
+  
+  
+  form {
+    text-align: center;
+  }
+  
+  
+  div{
+    text-align: center;
+  }
+
+  p {
+    position: absolute;
+    right: 2%;
+    top: 70px;
+    font-size: 30px;
+    margin-top: 5px;
+  }
+  
+  
+  #msg, #time {
+    position: absolute;
+    padding: 5px 10px;
+    border-radius: 10px;
+    z-index: 0;
+    overflow: hidden;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-family: 'Roboto Condensed', sans-serif;   
+  }
+  
+  #msg::before, #time::before{
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -350%;
+    width: 200%;
+    height: 800%;
+    background-color: #EF6C00;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background-image: linear-gradient(#38ef00, #38ef00), linear-gradient(#FFE0B2, #FFE0B2), linear-gradient(#38ef00, #38ef00), linear-gradient(#FFE0B2, #FFE0B2);
+    animation: anim-msg 4s linear infinite;
+  }
+
+  #msg::after,  #time::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 6px;
+    top: 6px;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    background: white;
+    border-radius: 5px;
+  }
+  @keyframes anim-msg {
+    100% {
+        transform: rotate(1turn);
+    }
+  }
+  @keyframes anim-time {
+    100% {
+        transform: rotate(1turn);
+    }
+  }
+  
+  #time  {
+    position: absolute;
+    top: 70px;  
+  }
+  
+  h3 {
+    margin: 0px 0px 8px 0px;
+    text-align: center;
+    font-size: 32px;
+  }
+  
+  body {
+    background-image: url("Pictures/speef.png");	/* фото на фоне */
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    scale: 0.8;
+  }
+  
+  #record {
+    position: absolute;
+    top: 260px;
+    right: 1%;
+    width: 300px;
+     padding: 40px 20px 20px 40px;
+    box-shadow: 0 0px 6px 4px rgba(0,60,180,0.35) inset;
+    border-radius: 6px;
+    background-color: rgba(0,60,180,0.18);
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  
+  #userName {
+    position: absolute;
+    top: 30px;
+    right: 1%;
+    font-size: 30px;
+    border-radius: 8px;
+  }
+  
+  #addButton {
+    padding: 5px 5px 3px 5px;
+  }
+  
+  
+  #refresh {
+    display: inline-block;
+    position: absolute;
+    top: 300px;
+    right: 40vw;
+    line-height: 45px;
+    border-radius: 35px;
+    margin: 10px 20px;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #524f4e;
+    padding: 20px;
+    background: rgba(207,255,184,1.00);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    transition: .1s;
+  }
+  
+  #refresh:hover {
+    background: #2EE59D;
+    box-shadow: 0 15px 20px rgba(46, 229, 157, .4);
+    color: white;
+    transform: translateY(-7px);
+  }
+  
+  li {
+    border-style: solid;		/*функции границы блока*/
+    border-color: black;		/*функции границы блока*/
+    border-width: 2px;
+    border-radius: 3px;
+    padding: 3px;
+    margin: 10px;
+    background-color: rgba(186,209,255,0.08);
+  }
+  
+  #canvas_plot  {
+    scale: 0.6;
+    position: absolute;
+    top: 70px;
+    right: -10%;    
+    background: rgba(159, 162, 207, 0.301);
+    margin-left: 14px;
+  }
+}
+
+@media (max-width: 1450px) and (min-width: 880px) and (max-aspect-ratio: 1.6) {
   #click {
     position: absolute;
     top: 400px;
@@ -524,7 +938,7 @@ li {
   
   #record {
     position: absolute;
-    top: 460px;
+    top: 720px;
     left: 1%;
     width: 90%;
     box-shadow: 0 0px 6px 4px rgba(0,60,180,0.35) inset;
@@ -583,8 +997,8 @@ li {
   
   #canvas_plot  {
     position: absolute;
-    top: 650px;
-    margin-left: -275px;
+    top: 480px;
+    left: 1vw;
     background: rgba(159, 162, 207, 0.301);
     scale: 0.85;
   }
@@ -595,9 +1009,9 @@ li {
     position: absolute;
     top: 250px;
     left: 5%;
-    right: 15%;
     text-decoration: none;
-    padding: 9% 20%;
+    width: 90vw;
+    height: 150px;
     color: #000000;
     font-weight: 700;
     font-size: 50px;
@@ -775,8 +1189,8 @@ li {
   #canvas_plot  {
     position: absolute;
     top: 500px;
-    margin-left: -275px;
+    left: -60px;
     background: rgba(159, 162, 207, 0.301);
-    scale: 0.7;
+    scale: 0.65;
   }
 }

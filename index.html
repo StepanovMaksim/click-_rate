@@ -5,8 +5,10 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 		<title>Скорость нажатий</title>
 		<link type="text/css" rel="stylesheet" href="Speed.css">
+		<!-- <script src="https://yandex.ru/games/sdk/v2"></script> -->
 		<script src="Speed.js"></script>
 		<meta name="viewport" content="width=device-width, user-scalable=no">
+		
 	</head>
 
 	<body>
@@ -15,6 +17,17 @@
 				touch-action: none;
 			}
 		</style>
+
+		<dialog style="padding: 0" onclick="closeResult()">
+			<div id="modal-box" style="padding: 1rem">
+			<div id="res-animal"></div>
+			<div id="res-img"></div>
+			<div id="res-speed"></div>
+			<button id="close-modal-btn" onclick="closeResult()">Закрыть</button>
+			</div>
+		</dialog>
+		<input type="button" id="show-modal-btn" onClick="showResult()" value="Show modal" />
+
 		<img id="fly" src="Pictures/srart.png" alt="Ракета"> 
 		<img id="planeta" src="Pictures/mars5.png" alt="Планета">
 
@@ -29,10 +42,10 @@
 			<p>Введите имя и жмите на кнопку</p> 
 		</form>
 		
-		<ol id="record">
+		<!-- <ol id="record">
 			<h3> Таблица рекордов </h3>	
 			<li>139 Автор</li>
-		</ol>
+		</ol> -->
 
 		<div >
 			<input type="button"  id="click" value="Жми!"> <br>
