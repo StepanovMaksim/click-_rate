@@ -7,68 +7,68 @@ let isModalOpen = false;
 
 const animals = {
 	0: {
-		name: 'улитка',
-		grade: 'медленно',
+		name: 'snail',
+		grade: 'slow',
 		image: 'pictures/snail.jpg',
 	},
 	1: {
-		name: 'черепаха',
-		grade: 'медленно',
+		name: 'turtle',
+		grade: 'slow',
 		image: 'pictures/turtle.jpg',
 	},
 	2: {
-		name: 'мышь',
-		grade: 'медленно',
+		name: 'mouse',
+		grade: 'slow',
 		image: 'pictures/mouse.jpg',
 	},
 	3: {
-		name: 'свин',
-		grade: 'поднажми!',
+		name: 'pig',
+		grade: 'not bad!',
 		image: 'pictures/pig.jpg',
 	},
 	4: {
-		name: 'слон',
-		grade: 'поднажми!',
+		name: 'elephant',
+		grade: 'not bad!',
 		image: 'pictures/el.jpg',
 	},
 	5: {
-		name: 'бегемот',
-		grade: 'неплохо!',
+		name: 'hippopotamus',
+		grade: 'not bad!',
 		image: 'pictures/hipp.jpg',
 	},
 	6: {
-		name: 'лиса',
-		grade: 'Хорошо!',
+		name: 'fox',
+		grade: 'Good!',
 		image: 'pictures/fox.jpg',
 	},
 	7: {
-		name: 'медведь',
-		grade: 'Хорошо',
+		name: 'bear',
+		grade: 'Good!',
 		image: 'pictures/bear.jpg',
 	},
 	8: {
-		name: 'косуля',
-		grade: 'Хорошо!',
+		name: 'roe deer',
+		grade: 'Good!',
 		image: 'pictures/roe.jpg',
 	},
 	9: {
-		name: 'заяц',
-		grade: 'Отлично!',
+		name: 'hare',
+		grade: 'Great!',
 		image: 'pictures/hare.jpg',
 	},
 	10: {
-		name: 'ягуар',
-		grade: 'Отлично!',
+		name: 'jaguar',
+		grade: 'Great!',
 		image: 'pictures/jaguar.jpg',
 	},
 	11: {
-		name: 'гепард',
-		grade: 'НЕВЕРОЯТНО!',
+		name: 'cheetah',
+		grade: 'INCREDIBLE!',
 		image: 'pictures/cheetah.jpg',
 	},
 	12: {
-		name: 'ястреб',
-		grade: 'НЕВЕРОЯТНО!',
+		name: 'hawk',
+		grade: 'INCREDIBLE!',
 		image: 'pictures/hawk.jpg',
 	},
 }
@@ -219,15 +219,15 @@ function onClick() {
 			let button1 = document.getElementById("click");
 			button1.onclick = onClick;
 		
-  		messageTime.innerHTML="Время: "+j;
+  		messageTime.innerHTML="Time: "+j;
 		  
 	}
 		
 		if (j < 0.04) {
 			clearInterval(id);		 
-			messageTime.innerHTML="Время: 0";
+			messageTime.innerHTML="Time: 0";
 			modalAnimal.innerHTML = changeAnimalName(i).toLocaleUpperCase()
-			modalSpeed.innerHTML = 'Результат: ' + i + ' км/ч'
+			modalSpeed.innerHTML = 'Result: ' + i + ' km/h'
 			modalGrade.innerHTML = changeAnimalGrade(i)
 			imgAnimal.id = 'Animal-img'
 			imgAnimal.src = changeAnimalImage(i)
@@ -250,7 +250,7 @@ function onClick() {
 		if (j < 10 && j >0.04) {
 			i++;
 			let messageArea= document.getElementById('msg');
-			messageArea.innerHTML="Ваше количество нажатий: "+i;
+			messageArea.innerHTML="Your number of clicks: "+i;
 			if (j>1) {
 				var l = Math.floor(10-j);	
 			} else if (j<1) {
@@ -297,9 +297,9 @@ function refr() {
   	i= 0;
 	k=2;
   	let messageArea= document.getElementById('msg');
-  	messageArea.innerHTML="Ваше количество нажатий: 0";
+  	messageArea.innerHTML="Your number of clicks: 0";
 	let messageTime = document.getElementById('time');
-	messageTime.innerHTML="Время: 10"; 
+	messageTime.innerHTML="Time: 10"; 
 	const canvasPlot = document.getElementById('canvas_plot');
 	const ctx = canvasPlot.getContext('2d');
 	ctx.clearRect(0,0, 550, 250);
@@ -380,7 +380,6 @@ function graf(touch, tochka, scaleX, scaleY, sizeCanv) {
 	ctx.stroke();
 	ctx.closePath();
 	
-	// График
 
 	const x = tochka;
 	const y = touch;
