@@ -285,8 +285,8 @@ function onClick() {
 	img.src=cart[oh];
 
 	if (window.innerWidth < 1400) {
-		img.style.top = 800-i*5+'px';
-	} else { img.style.top = 700-i*5+'px';}
+		img.style.top = 700-i*3+'px';
+	} else { img.style.top = 700-i*3+'px';}
 	
 }
 
