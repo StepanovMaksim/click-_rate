@@ -186,7 +186,7 @@ body {
 #refresh {
   text-decoration: none;
   display: inline-block;
-  
+
   line-height: 45px;
   border-radius: 35px;
   margin: 10px 20px;
@@ -605,7 +605,7 @@ li {
     display: inline-block;
     position: absolute;
     top: 300px;
-    right: 40vw;
+    left: 35vw;
     line-height: 45px;
     border-radius: 35px;
     margin: 10px 20px;
@@ -811,7 +811,7 @@ li {
     display: inline-block;
     position: absolute;
     top: 450px;
-    left: 41%;
+    left: 43%;
     line-height: 45px;
     border-radius: 35px;
     margin: 10px 20px;
@@ -1219,7 +1219,7 @@ li {
     font-weight: 600;
     color: #524f4e;
     padding: 8px;
-    left: 30%;
+    left: 38%;
     background: rgba(207,255,184,1.00);
     box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
     transition: .1s;
