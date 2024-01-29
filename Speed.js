@@ -193,16 +193,17 @@ function closeResult() {
 
 function onClick() {
 	const modalAnimal = document.getElementById('res-animal');
-	const modalImg = document.getElementById('res-img');
+	const modalImg = document.getElementById('Animal-img');
 	const modalSpeed = document.getElementById('res-speed');
 	const modalGrade = document.getElementById('res-grade');
-	const imgAnimal = document.createElement('img');
+	const refreshBut = document.getElementById('refresh')
 	
 		
 	rz+=1;	
 	k=1;	
 	if (j > 10.9) {
-		j--;	
+		j--;
+		refreshBut.style.scale=0	
 	}
 	
 	const messageTime = document.getElementById('time');
@@ -229,14 +230,11 @@ function onClick() {
 			modalAnimal.innerHTML = changeAnimalName(i).toLocaleUpperCase()
 			modalSpeed.innerHTML = 'Result: ' + i + ' km/h'
 			modalGrade.innerHTML = changeAnimalGrade(i)
-			imgAnimal.id = 'Animal-img'
-			imgAnimal.src = changeAnimalImage(i)
-			imgAnimal.alt = changeAnimalName(i)
-			modalImg.append(imgAnimal)
+			modalImg.src= changeAnimalImage(i)
 			const modal = document.querySelector('dialog')
 			modal.showModal()
 			isModalOpen = true
-
+			refreshBut.style.scale=1;
 //			let textInput = document.getElementById("userName");
 //			let nameGamer = textInput.value;
 //			let li = document.createElement("li");
@@ -284,15 +282,22 @@ function onClick() {
 
 	img.src=cart[oh];
 
-	if (window.innerWidth < 1400) {
-		img.style.top = 700-i*3+'px';
-	} else { img.style.top = 700-i*3+'px';}
-	
+	if (window.innerWidth < 1450) {
+		if (window.innerHeight < 710) {
+			img.style.bottom = -400 + i * 3 + 'px'
+		} else  {
+			img.style.bottom = 30 + i * 3 + 'px'
+		} 
+	} else {
+			img.style.bottom = 30 + i * 3 + 'px'
+		}
 }
 
 
 	
 function refr() {
+	let img = document.getElementById('fly')
+
 	j = 11;
   	i= 0;
 	k=2;
@@ -307,6 +312,15 @@ function refr() {
 		elems.style.width = 50+"px";
 		elems.style.height = 50+"px";
 		rz=1;
+		if (window.innerWidth < 1450) {
+			if (window.innerHeight < 710) {
+				img.style.bottom = -400 + i * 3 + 'px'
+			} else  {
+				img.style.bottom = 30 + i * 3 + 'px'
+			} 
+		} else {
+				img.style.bottom = 30 + i * 3 + 'px'
+			}
 }
 
 function st(string) {
