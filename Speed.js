@@ -288,7 +288,7 @@ function onClick() {
 	img.src=cart[oh];
 
 	if (window.innerWidth < 1450) {
-		if (window.innerWidth / window.innerHeight > 1.6) {
+		if (window.innerHeight < 710) {
 			img.style.bottom = -400 + i * 3 + 'px'
 		} else  {
 			img.style.bottom = 30 + i * 3 + 'px'
