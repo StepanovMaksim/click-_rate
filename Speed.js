@@ -82,8 +82,7 @@ let i=0,
 	u=[],
  	up=[],
 	oh =0,
- 	rz = 2,
-	refrCond = 0;
+ 	rz = 2;
 	u[11]=0;
 
 
@@ -196,16 +195,17 @@ function closeResult() {
 
 function onClick() {
 	const modalAnimal = document.getElementById('res-animal');
-	const modalImg = document.getElementById('res-img');
+	const modalImg = document.getElementById('Animal-img');
 	const modalSpeed = document.getElementById('res-speed');
 	const modalGrade = document.getElementById('res-grade');
-	const imgAnimal = document.createElement('img');
+	const refreshBut = document.getElementById('refresh')
 	
-	refrCond = 1;	
+	;
 	rz+=1;	
 	k=1;	
 	if (j > 10.9) {
-		j--;	
+		j--;
+		refreshBut.style.scale=0
 	}
 	
 	const messageTime = document.getElementById('time');
@@ -232,14 +232,11 @@ function onClick() {
 			modalAnimal.innerHTML = changeAnimalName(i).toLocaleUpperCase()
 			modalSpeed.innerHTML = 'Результат: ' + i + ' км/ч'
 			modalGrade.innerHTML = changeAnimalGrade(i)
-			imgAnimal.id = 'Animal-img'
-			imgAnimal.src = changeAnimalImage(i)
-			imgAnimal.alt = changeAnimalName(i)
-			modalImg.append(imgAnimal)
+			modalImg.src= changeAnimalImage(i)
 			const modal = document.querySelector('dialog')
 			modal.showModal()
 			isModalOpen = true
-			refrCond = 0
+			refreshBut.style.scale=1;
 //			let textInput = document.getElementById("userName");
 //			let nameGamer = textInput.value;
 //			let li = document.createElement("li");
@@ -260,6 +257,9 @@ function onClick() {
 				l = Math.floor(10-j);
 			}
 		}
+
+		
+
 	up[l]=i;
 	u[0]=up[0];
 	u[l]=up[l]-up[l-1];
@@ -304,7 +304,7 @@ function onClick() {
 function refr() {
 	let img = document.getElementById('fly')
 
-	if (refrCond == 0) {
+	
 		j = 11;
 		i= 0;
 		k=2;
@@ -320,15 +320,15 @@ function refr() {
 		elems.style.height = 50+"px";
 		rz=1;
 		if (window.innerWidth < 1450) {
-			if (window.innerWidth / window.innerHeight > 1.6) {
+			if (window.innerHeight < 710) {
 				img.style.bottom = -400 + i * 3 + 'px'
-			} else {
+			} else  {
+				img.style.bottom = 30 + i * 3 + 'px'
+			} 
+		} else {
 				img.style.bottom = 30 + i * 3 + 'px'
 			}
-		} else {
-			img.style.bottom = 30 + i * 3 + 'px'
-		}
-	}
+
 	
 }
 
