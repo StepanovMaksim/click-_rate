@@ -64,7 +64,7 @@ p {
 
 #fly {
 	position: absolute;
-	top: 700px;
+	bottom: 30px;
 	left: 100px;
 }
 
@@ -159,6 +159,7 @@ body {
 	background-repeat: no-repeat;
 	background-size:cover;
   background-attachment: fixed;
+  overflow: hidden;
 }
 
 #record {
@@ -271,7 +272,7 @@ li {
   
   #fly {
     position: absolute;
-    top: 700px;
+    bottom: 30px;
     left: 100px;
   }
   
@@ -366,6 +367,7 @@ li {
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed;
+    overflow: hidden;
   }
   
   #record {
@@ -448,7 +450,7 @@ li {
 @media (max-width: 1450px) and (min-width: 880px) and (min-aspect-ratio: 1.6) {
   #click {
     position: absolute;
-    top: 100px;
+    top: 70px;
     left: 35%;
     text-decoration: none;
     padding: 60px 20px;
@@ -480,8 +482,8 @@ li {
   
   #fly {
     position: absolute;
-    top: 600px;
-    left: 70px;
+    bottom: -400px;
+    left: 0px;
   }
   
   
@@ -572,6 +574,7 @@ li {
     background-size:cover;
     background-attachment: fixed;
     scale: 0.8;
+    overflow: hidden;
   }
   
   #record {
@@ -642,7 +645,7 @@ li {
     scale: 0.6;
     position: absolute;
     top: 70px;
-    right: -10%;    
+    right: -12%;    
     background: rgba(159, 162, 207, 0.301);
     margin-left: 14px;
   }
@@ -657,7 +660,7 @@ li {
 @media (max-width: 1450px) and (min-width: 880px) and (max-aspect-ratio: 1.6) {
   #click {
     position: absolute;
-    top: 200px;
+    top: 100px;
     left: 42%;
     text-decoration: none;
     padding: 60px 20px;
@@ -689,7 +692,7 @@ li {
   
   #fly {
     position: absolute;
-    top: 600px;
+    bottom: 30px;
     left: 70px;
   }
   
@@ -781,6 +784,7 @@ li {
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed;
+    overflow: hidden;
   }
   
   #record {
@@ -810,7 +814,7 @@ li {
   #refresh {
     display: inline-block;
     position: absolute;
-    top: 450px;
+    top: 320px;
     left: 41%;
     line-height: 45px;
     border-radius: 35px;
@@ -846,7 +850,7 @@ li {
   
   #canvas_plot  {
     position: absolute;
-    top: 650px;
+    top: 450px;
     left: 27%;
       margin: auto;
       background: rgba(159, 162, 207, 0.301);
@@ -983,6 +987,7 @@ li {
     background-size:cover;
     background-attachment: fixed;
     text-align: center;
+    overflow: hidden;
   }
   
   #record {
@@ -1181,6 +1186,7 @@ li {
     background-size:cover;
     background-attachment: fixed;
     text-align: center;
+    overflow: hidden;
   }
   
   #record {
@@ -1244,7 +1250,7 @@ li {
   
   #canvas_plot  {
     position: absolute;
-    top: 500px;
+    top: 460px;
     left: -60px;
     background: rgba(159, 162, 207, 0.301);
     scale: 0.65;

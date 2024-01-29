@@ -5,7 +5,19 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 		<title>Скорость нажатий</title>
 		<link type="text/css" rel="stylesheet" href="Speed.css">
-		<!-- <script src="https://yandex.ru/games/sdk/v2"></script> -->
+		<script src="https://yandex.ru/games/sdk/v2"></script>
+		<!-- <script>
+			YaGames.init().then(ysdk => {
+				ysdk.adv.showFullscreenAdv({
+					callbacks: {
+						onClose: getCallback('onClose'),
+						onOpen: getCallback('onOpen'),
+						onError: getCallback('onError'),
+						onOffline: getCallback('onOffline')
+					}
+				});
+			}); -->
+		</script>
 		<script src="Speed.js"></script>
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 		
@@ -35,7 +47,7 @@
 		<canvas id="canvas_plot" width="550" height="250"></canvas>
 
 		<div id="time">Время: 10 </div>
-		<div id="msg">Ваше количество нажатий: 0 </div>
+		<div id="msg">Количество нажатий: 0 </div>
 
 		<h1>Жмите на кнопку</h1> 
 
@@ -49,5 +61,6 @@
 			<input type="button"  id="click" value="Жми!"> <br>
 			<input type="button" id="refresh" value="Заново!" onClick="refr();">
 		</div>
+		
 	</body>
 </html>

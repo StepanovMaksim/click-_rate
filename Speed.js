@@ -3,73 +3,75 @@ window.onload = init;
 
 
 
+
+
 let isModalOpen = false;
 
 const animals = {
 	0: {
 		name: 'улитка',
 		grade: 'медленно',
-		image: 'pictures/snail.jpg',
+		image: 'snail.jpg',
 	},
 	1: {
 		name: 'черепаха',
 		grade: 'медленно',
-		image: 'pictures/turtle.jpg',
+		image: 'turtle.jpg',
 	},
 	2: {
 		name: 'мышь',
 		grade: 'медленно',
-		image: 'pictures/mouse.jpg',
+		image: 'mouse.jpg',
 	},
 	3: {
 		name: 'свин',
 		grade: 'поднажми!',
-		image: 'pictures/pig.jpg',
+		image: 'pig.jpg',
 	},
 	4: {
 		name: 'слон',
 		grade: 'поднажми!',
-		image: 'pictures/el.jpg',
+		image: 'el.jpg',
 	},
 	5: {
 		name: 'бегемот',
 		grade: 'неплохо!',
-		image: 'pictures/hipp.jpg',
+		image: 'hipp.jpg',
 	},
 	6: {
 		name: 'лиса',
 		grade: 'Хорошо!',
-		image: 'pictures/fox.jpg',
+		image: 'fox.jpg',
 	},
 	7: {
 		name: 'медведь',
 		grade: 'Хорошо',
-		image: 'pictures/bear.jpg',
+		image: 'bear.jpg',
 	},
 	8: {
 		name: 'косуля',
 		grade: 'Хорошо!',
-		image: 'pictures/roe.jpg',
+		image: 'roe.jpg',
 	},
 	9: {
 		name: 'заяц',
 		grade: 'Отлично!',
-		image: 'pictures/hare.jpg',
+		image: 'hare.jpg',
 	},
 	10: {
 		name: 'ягуар',
 		grade: 'Отлично!',
-		image: 'pictures/jaguar.jpg',
+		image: 'jaguar.jpg',
 	},
 	11: {
 		name: 'гепард',
 		grade: 'НЕВЕРОЯТНО!',
-		image: 'pictures/cheetah.jpg',
+		image: 'cheetah.jpg',
 	},
 	12: {
 		name: 'ястреб',
 		grade: 'НЕВЕРОЯТНО!',
-		image: 'pictures/hawk.jpg',
+		image: 'hawk.jpg',
 	},
 }
 		
@@ -80,7 +82,8 @@ let i=0,
 	u=[],
  	up=[],
 	oh =0,
- 	rz = 2;
+ 	rz = 2,
+	refrCond = 0;
 	u[11]=0;
 
 
@@ -171,12 +174,12 @@ function changeAnimalImage(speed) {
 
 
 function init() {
+	
 	var button1 = document.getElementById("click");
 	button1.onclick = onClick;
 //	sortList();	
-	graf(0, 1, 50, 25, 250)
+	graf(0, 1, 50, 25, 250);
 }
-
 
 // function showResult() {
 // 	const modal = document.querySelector('dialog');
@@ -198,7 +201,7 @@ function onClick() {
 	const modalGrade = document.getElementById('res-grade');
 	const imgAnimal = document.createElement('img');
 	
-		
+	refrCond = 1;	
 	rz+=1;	
 	k=1;	
 	if (j > 10.9) {
@@ -236,7 +239,7 @@ function onClick() {
 			const modal = document.querySelector('dialog')
 			modal.showModal()
 			isModalOpen = true
-
+			refrCond = 0
 //			let textInput = document.getElementById("userName");
 //			let nameGamer = textInput.value;
 //			let li = document.createElement("li");
@@ -250,7 +253,7 @@ function onClick() {
 		if (j < 10 && j >0.04) {
 			i++;
 			let messageArea= document.getElementById('msg');
-			messageArea.innerHTML="Ваше количество нажатий: "+i;
+			messageArea.innerHTML="Количество нажатий: "+i;
 			if (j>1) {
 				var l = Math.floor(10-j);	
 			} else if (j<1) {
@@ -284,29 +287,49 @@ function onClick() {
 
 	img.src=cart[oh];
 
-	if (window.innerWidth < 1400) {
-		img.style.top = 700-i*3+'px';
-	} else { img.style.top = 700-i*3+'px';}
-	
+	if (window.innerWidth < 1450) {
+		if (window.innerWidth / window.innerHeight > 1.6) {
+			img.style.bottom = -400 + i * 3 + 'px'
+		} else  {
+			img.style.bottom = 30 + i * 3 + 'px'
+		} 
+	} else {
+			img.style.bottom = 30 + i * 3 + 'px'
+		}
+
 }
 
 
 	
 function refr() {
-	j = 11;
-  	i= 0;
-	k=2;
-  	let messageArea= document.getElementById('msg');
-  	messageArea.innerHTML="Ваше количество нажатий: 0";
-	let messageTime = document.getElementById('time');
-	messageTime.innerHTML="Время: 10"; 
-	const canvasPlot = document.getElementById('canvas_plot');
-	const ctx = canvasPlot.getContext('2d');
-	ctx.clearRect(0,0, 550, 250);
-	let elems = document.getElementById("planeta");
+	let img = document.getElementById('fly')
+
+	if (refrCond == 0) {
+		j = 11;
+		i= 0;
+		k=2;
+		let messageArea= document.getElementById('msg');
+		messageArea.innerHTML="Количество нажатий: 0";
+		let messageTime = document.getElementById('time');
+		messageTime.innerHTML="Время: 10"; 
+		const canvasPlot = document.getElementById('canvas_plot');
+		const ctx = canvasPlot.getContext('2d');
+		ctx.clearRect(0,0, 550, 250);
+		let elems = document.getElementById("planeta");
 		elems.style.width = 50+"px";
 		elems.style.height = 50+"px";
 		rz=1;
+		if (window.innerWidth < 1450) {
+			if (window.innerWidth / window.innerHeight > 1.6) {
+				img.style.bottom = -400 + i * 3 + 'px'
+			} else {
+				img.style.bottom = 30 + i * 3 + 'px'
+			}
+		} else {
+			img.style.bottom = 30 + i * 3 + 'px'
+		}
+	}
+	
 }
 
 function st(string) {
