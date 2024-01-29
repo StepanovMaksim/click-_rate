@@ -82,6 +82,7 @@ let i=0,
 	u=[],
  	up=[],
 	oh =0,
+	forAdv = 0,
  	rz = 2;
 	u[11]=0;
 
@@ -173,7 +174,6 @@ function changeAnimalImage(speed) {
 
 
 function init() {
-	
 	var button1 = document.getElementById("click");
 	button1.onclick = onClick;
 //	sortList();	
@@ -194,6 +194,7 @@ function closeResult() {
 }
 
 function onClick() {
+	
 	const modalAnimal = document.getElementById('res-animal');
 	const modalImg = document.getElementById('Animal-img');
 	const modalSpeed = document.getElementById('res-speed');
@@ -227,7 +228,12 @@ function onClick() {
 	}
 		
 		if (j < 0.04) {
-			clearInterval(id);		 
+
+			clearInterval(id);	
+			forAdv++;
+			if (forAdv%5==1){
+				YaGames.init().then(ysdk => ysdk.adv.showFullscreenAdv());
+			};	 
 			messageTime.innerHTML="Время: 0";
 			modalAnimal.innerHTML = changeAnimalName(i).toLocaleUpperCase()
 			modalSpeed.innerHTML = 'Результат: ' + i + ' км/ч'
@@ -237,6 +243,7 @@ function onClick() {
 			modal.showModal()
 			isModalOpen = true
 			refreshBut.style.scale=1;
+			
 //			let textInput = document.getElementById("userName");
 //			let nameGamer = textInput.value;
 //			let li = document.createElement("li");
@@ -302,9 +309,10 @@ function onClick() {
 
 	
 function refr() {
+	
 	let img = document.getElementById('fly')
 
-	
+	console.log(forAdv);
 		j = 11;
 		i= 0;
 		k=2;
