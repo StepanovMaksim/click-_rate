@@ -9,67 +9,67 @@ const animals = {
 	0: {
 		name: 'snail',
 		grade: 'slow',
-		image: 'pictures/snail.jpg',
+		image: 'snail.jpg',
 	},
 	1: {
 		name: 'turtle',
 		grade: 'slow',
-		image: 'pictures/turtle.jpg',
+		image: 'turtle.jpg',
 	},
 	2: {
 		name: 'mouse',
 		grade: 'slow',
-		image: 'pictures/mouse.jpg',
+		image: 'mouse.jpg',
 	},
 	3: {
 		name: 'pig',
 		grade: 'not bad!',
-		image: 'pictures/pig.jpg',
+		image: 'pig.jpg',
 	},
 	4: {
 		name: 'elephant',
 		grade: 'not bad!',
-		image: 'pictures/el.jpg',
+		image: 'el.jpg',
 	},
 	5: {
 		name: 'hippopotamus',
 		grade: 'not bad!',
-		image: 'pictures/hipp.jpg',
+		image: 'hipp.jpg',
 	},
 	6: {
 		name: 'fox',
 		grade: 'Good!',
-		image: 'pictures/fox.jpg',
+		image: 'fox.jpg',
 	},
 	7: {
 		name: 'bear',
 		grade: 'Good!',
-		image: 'pictures/bear.jpg',
+		image: 'bear.jpg',
 	},
 	8: {
 		name: 'roe deer',
 		grade: 'Good!',
-		image: 'pictures/roe.jpg',
+		image: 'roe.jpg',
 	},
 	9: {
 		name: 'hare',
 		grade: 'Great!',
-		image: 'pictures/hare.jpg',
+		image: 'hare.jpg',
 	},
 	10: {
 		name: 'jaguar',
 		grade: 'Great!',
-		image: 'pictures/jaguar.jpg',
+		image: 'jaguar.jpg',
 	},
 	11: {
 		name: 'cheetah',
 		grade: 'INCREDIBLE!',
-		image: 'pictures/cheetah.jpg',
+		image: 'cheetah.jpg',
 	},
 	12: {
 		name: 'hawk',
 		grade: 'INCREDIBLE!',
-		image: 'pictures/hawk.jpg',
+		image: 'hawk.jpg',
 	},
 }
 		
@@ -80,6 +80,7 @@ let i=0,
 	u=[],
  	up=[],
 	oh =0,
+	forAdv=0,
  	rz = 2;
 	u[11]=0;
 
@@ -225,7 +226,11 @@ function onClick() {
 	}
 		
 		if (j < 0.04) {
-			clearInterval(id);		 
+			clearInterval(id);	
+			forAdv++;
+			if (forAdv%5==1){
+				YaGames.init().then(ysdk => ysdk.adv.showFullscreenAdv());
+			}
 			messageTime.innerHTML="Time: 0";
 			modalAnimal.innerHTML = changeAnimalName(i).toLocaleUpperCase()
 			modalSpeed.innerHTML = 'Result: ' + i + ' km/h'
@@ -296,8 +301,9 @@ function onClick() {
 
 	
 function refr() {
-	let img = document.getElementById('fly')
 
+	let img = document.getElementById('fly')
+	
 	j = 11;
   	i= 0;
 	k=2;
