@@ -188,6 +188,10 @@ function init() {
 // }
 
 function closeResult() {
+	forAdv++;
+	if (forAdv % 6 == 1) {
+		YaGames.init().then(ysdk => ysdk.adv.showFullscreenAdv())
+	};
 	const modal = document.querySelector('dialog');
 	modal.close();
 	isModalOpen = false;
@@ -199,9 +203,7 @@ function onClick() {
 	const modalImg = document.getElementById('Animal-img');
 	const modalSpeed = document.getElementById('res-speed');
 	const modalGrade = document.getElementById('res-grade');
-	const refreshBut = document.getElementById('refresh')
-	
-	;
+	const refreshBut = document.getElementById('refresh');
 	rz+=1;	
 	k=1;	
 	if (j > 10.9) {
@@ -230,15 +232,13 @@ function onClick() {
 		if (j < 0.04) {
 
 			clearInterval(id);	
-			forAdv++;
-			if (forAdv%5==1){
-				YaGames.init().then(ysdk => ysdk.adv.showFullscreenAdv());
-			};	 
+				 
 			messageTime.innerHTML="Время: 0";
 			modalAnimal.innerHTML = changeAnimalName(i).toLocaleUpperCase()
 			modalSpeed.innerHTML = 'Результат: ' + i + ' км/ч'
 			modalGrade.innerHTML = changeAnimalGrade(i)
 			modalImg.src= changeAnimalImage(i)
+			modalImg.alt= changeAnimalImage(i)
 			const modal = document.querySelector('dialog')
 			modal.showModal()
 			isModalOpen = true
@@ -311,8 +311,8 @@ function onClick() {
 function refr() {
 	
 	let img = document.getElementById('fly')
-
-	console.log(forAdv);
+	const refreshBut = document.getElementById('refresh')
+	refreshBut.style.scale = 0
 		j = 11;
 		i= 0;
 		k=2;
