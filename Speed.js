@@ -83,6 +83,7 @@ let i=0,
  	up=[],
 	oh =0,
 	forAdv = 0,
+	bestRes =0,
  	rz = 2;
 	u[11]=0;
 
@@ -204,6 +205,7 @@ function onClick() {
 	const modalSpeed = document.getElementById('res-speed');
 	const modalGrade = document.getElementById('res-grade');
 	const refreshBut = document.getElementById('refresh');
+	const record = document.getElementById('record');
 	rz+=1;	
 	k=1;	
 	if (j > 10.9) {
@@ -243,6 +245,12 @@ function onClick() {
 			modal.showModal()
 			isModalOpen = true
 			refreshBut.style.scale=1;
+
+			if (i > bestRes) {
+				bestRes = i;
+			}
+
+			record.innerHTML = 'Рекорд: ' + bestRes + ' км/ч'
 			
 //			let textInput = document.getElementById("userName");
 //			let nameGamer = textInput.value;
