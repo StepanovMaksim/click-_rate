@@ -187,6 +187,10 @@ function init() {
 // }
 
 function closeResult() {
+	forAdv++
+	if (forAdv % 6 == 1) {
+		YaGames.init().then(ysdk => ysdk.adv.showFullscreenAdv())
+	}
 	const modal = document.querySelector('dialog');
 	modal.close();
 	isModalOpen = false;
@@ -227,15 +231,13 @@ function onClick() {
 		
 		if (j < 0.04) {
 			clearInterval(id);	
-			forAdv++;
-			if (forAdv%5==1){
-				YaGames.init().then(ysdk => ysdk.adv.showFullscreenAdv());
-			}
+			
 			messageTime.innerHTML="Time: 0";
 			modalAnimal.innerHTML = changeAnimalName(i).toLocaleUpperCase()
 			modalSpeed.innerHTML = 'Result: ' + i + ' km/h'
 			modalGrade.innerHTML = changeAnimalGrade(i)
 			modalImg.src= changeAnimalImage(i)
+			modalImg.alt= changeAnimalName(i)
 			const modal = document.querySelector('dialog')
 			modal.showModal()
 			isModalOpen = true
@@ -303,7 +305,8 @@ function onClick() {
 function refr() {
 
 	let img = document.getElementById('fly')
-	
+	const refreshBut = document.getElementById('refresh')
+	refreshBut.style.scale = 0
 	j = 11;
   	i= 0;
 	k=2;
