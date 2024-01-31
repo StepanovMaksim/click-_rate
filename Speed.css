@@ -182,7 +182,7 @@ body {
   overflow: hidden;
 }
 
-#record {
+/* #record {
 	position: absolute;
 	top: 15%;
   right: 10%;
@@ -192,7 +192,7 @@ body {
 	box-shadow: 0 0px 6px 4px rgba(0,60,180,0.35) inset;
 	border-radius: 6px;
 	background-color: rgba(0,60,180,0.18);
-}
+} */
 
 #userName {
 	font-size: 20px;
@@ -391,7 +391,7 @@ li {
     overflow: hidden;
   }
   
-  #record {
+  /* #record {
     position: absolute;
     top: 15%;
     right: 10%;
@@ -401,7 +401,7 @@ li {
     box-shadow: 0 0px 6px 4px rgba(0,60,180,0.35) inset;
     border-radius: 6px;
     background-color: rgba(0,60,180,0.18);
-  }
+  } */
   
   #userName {
     font-size: 20px;
@@ -599,7 +599,7 @@ li {
     overflow: hidden;
   }
   
-  #record {
+  /* #record {
     position: absolute;
     top: 260px;
     right: 1%;
@@ -610,7 +610,7 @@ li {
     background-color: rgba(0,60,180,0.18);
     font-size: 24px;
     margin-bottom: 20px;
-  }
+  } */
   
   
   #userName {
@@ -809,7 +809,7 @@ li {
     overflow: hidden;
   }
   
-  #record {
+  /* #record {
     position: absolute;
     top: 100px;
     right: 6%;
@@ -820,7 +820,7 @@ li {
     background-color: rgba(0,60,180,0.18);
     font-size: 24px;
     margin-bottom: 20px;
-  }
+  } */
   
   
   #userName {
@@ -1012,7 +1012,7 @@ li {
     overflow: hidden;
   }
   
-  #record {
+  /* #record {
     position: absolute;
     top: 720px;
     left: 1%;
@@ -1022,7 +1022,7 @@ li {
     background-color: rgba(0,60,180,0.18);
     font-size: 24px;
     margin-bottom: 20px;
-  }
+  } */
   
   
   #userName {
@@ -1211,7 +1211,7 @@ li {
     overflow: hidden;
   }
   
-  #record {
+  /* #record {
     position: absolute;
     top: 750px;
     left: 1%;
@@ -1221,7 +1221,7 @@ li {
     background-color: rgba(0,60,180,0.18);
     font-size: 24px;
     margin-bottom: 20px;
-  }
+  } */
   
   
   #userName {
