@@ -206,7 +206,7 @@ function closeResult() {
 }
 
 function onClick() {
-	
+	console.log(window.location)
 	const modalAnimal = document.getElementById('res-animal');
 	const modalImg = document.getElementById('Animal-img');
 	const modalSpeed = document.getElementById('res-speed');

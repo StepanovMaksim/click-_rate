@@ -917,7 +917,9 @@ li {
   }
   
   #fly {
-    display: none;
+    position: absolute;
+    top: 600px;
+    transform: rotate(270deg);
   }
   
   
@@ -1117,7 +1119,10 @@ li {
   }
   
   #fly {
-    display: none;
+    position: absolute;
+    left: 200px;
+    top: 500px;
+    transform: rotate(270deg);
   }
   
   
@@ -1323,6 +1328,8 @@ li {
     color: rgb(255, 248, 212);
     cursor: pointer;
   }
+
+  
 }
 
 @media (max-width: 450px) {
@@ -1369,6 +1376,7 @@ li {
     cursor: pointer;
   }
 
+
 }
 
 
@@ -1386,6 +1394,7 @@ li {
     border: solid 3px #4450ff;
     width: 55vw;
   }
+  
 }
 
 @media (max-width: 355px) {
