@@ -173,11 +173,18 @@ function changeAnimalImage(speed) {
 }
 
 
+// function translate() {
+// 	return document.getElementsByTagName( "html" )[0].lang == 'en' 
+// 			?	console.log(1) 
+// 			: 	console.log(2); 
+// }
+
 function init() {
 	var button1 = document.getElementById("click");
 	button1.onclick = onClick;
 //	sortList();	
 	graf(0, 1, 50, 25, 250);
+	translate()
 }
 
 // function showResult() {
