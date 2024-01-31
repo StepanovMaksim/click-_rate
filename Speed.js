@@ -174,18 +174,18 @@ function changeAnimalImage(speed) {
 }
 
 
-// function translate() {
-// 	return document.getElementsByTagName( "html" )[0].lang == 'en' 
-// 			?	console.log(1) 
-// 			: 	console.log(2); 
-// }
+function translate() {
+	return document.getElementsByTagName( "html" )[0].lang == 'en' 
+			?	console.log(1) 
+			: 	console.log(2); 
+}
 
 function init() {
 	var button1 = document.getElementById("click");
 	button1.onclick = onClick;
 //	sortList();	
 	graf(0, 1, 50, 25, 250);
-	translate()
+//	translate()
 }
 
 // function showResult() {
@@ -252,13 +252,14 @@ function onClick() {
 			modal.showModal()
 			isModalOpen = true
 			refreshBut.style.scale=1;
-
-			if (i > bestRes) {
-				bestRes = i;
-			}
-
-			record.innerHTML = 'Рекорд: ' + bestRes + ' км/ч'
 			
+			localStorage.getItem("record");
+			if (i > localStorage.record) {
+				localStorage.setItem("record", i);
+			}
+			
+			record.innerHTML = 'Рекорд: ' + localStorage.record + ' км/ч'
+
 //			let textInput = document.getElementById("userName");
 //			let nameGamer = textInput.value;
 //			let li = document.createElement("li");
