@@ -918,6 +918,7 @@ li {
   
   #fly {
     position: absolute;
+    left: 200px;
     top: 600px;
     transform: rotate(270deg);
   }
@@ -1084,7 +1085,7 @@ li {
   #Animal-img {
   border-radius: 20px;
   border: solid 3px #4450ff;
-  height: 45vh;
+  height: 40vh;
 }
 
 }
@@ -1120,8 +1121,8 @@ li {
   
   #fly {
     position: absolute;
-    left: 200px;
-    top: 500px;
+    left: 150px;
+    top: 550px;
     transform: rotate(270deg);
   }
   
@@ -1361,7 +1362,7 @@ li {
   #Animal-img {
     border-radius: 20px;
     border: solid 3px #4450ff;
-    width: 50vw;
+    width: 55vw;
   }
 
   #close-modal-btn {
@@ -1392,12 +1393,16 @@ li {
   #Animal-img {
     border-radius: 20px;
     border: solid 3px #4450ff;
-    width: 55vw;
+    width: 65vw;
   }
   
+  #modal-box {
+    font-size: 8vw;
+  }
+
 }
 
-@media (max-width: 355px) {
+@media (max-width: 360px) {
   #canvas_plot  {
     display: none;
   }
@@ -1406,6 +1411,10 @@ li {
     border-radius: 20px;
     border: solid 3px #4450ff;
     width: 55vw;
+  }
+
+  #fly {
+    display: none;
   }
 }
 
@@ -1455,3 +1464,8 @@ li {
   }
 }
 
+@media (max-height: 820px) and (max-width: 800px) {
+  #fly {
+    display: none;
+  }
+}

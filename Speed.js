@@ -88,6 +88,14 @@ let i=0,
 	u[11]=0;
 
 
+var lb;
+
+var player;
+
+
+
+
+
 
 function changeAnimalName(speed) {
 	return speed < 5
@@ -174,11 +182,55 @@ function changeAnimalImage(speed) {
 }
 
 
-function translate() {
-	return document.getElementsByTagName( "html" )[0].lang == 'en' 
-			?	console.log(1) 
-			: 	console.log(2); 
+function initLib() {
+	ysdk.getLeaderboards().then(_lb => (lb = _lb))
 }
+
+function initPlayer() {
+	ysdk
+		.getPlayer({ scopes: false })
+		.then(_player => {
+			player = _player
+		})
+		.catch(err => {
+			// Ошибка при инициализации объекта Player.
+		})
+}
+
+function setToLeaderBoard(bestRes) {
+	YaGames.init().then(ysdk => ysdk.getLeaderboards().then(lb => {
+		// Без extraData
+		lb.setLeaderboardScore('SumClick', bestRes)
+
+
+	}))
+}
+function isAvail() {
+	YaGames.init().then(ysdk =>
+		ysdk.isAvailableMethod('leaderboards.setLeaderboardScore')
+	)
+}
+
+const work = async () => {
+	const lb = await YaGames.init().then(ysdk => ysdk.getLeaderboards())
+	try {
+		const res = await lb.getLeaderboardPlayerEntry('SumClick')
+	} catch (err) {
+		if (err.code === 'LEADERBOARD_PLAYER_NOT_PRESENT') {
+			// Срабатывает, если у игрока нет записи в лидерборде
+		}
+	}
+	bestRes = res.store;
+	console.log('значение:' +res)
+}
+
+
+work();
+// function translate() {
+// 	return document.getElementsByTagName( "html" )[0].lang == 'en' 
+// 			?	console.log(1) 
+// 			: 	console.log(2); 
+// }
 
 function init() {
 	var button1 = document.getElementById("click");
@@ -186,7 +238,18 @@ function init() {
 //	sortList();	
 	graf(0, 1, 50, 25, 250);
 //	translate()
+
+	YaGames.init().then(ysdk => {
+		console.log('Yandex SDK initialized')
+		window.ysdk = ysdk
+		initPlayer();
+		initLib();
+	})
+	
+
 }
+
+
 
 // function showResult() {
 // 	const modal = document.querySelector('dialog');
@@ -206,7 +269,6 @@ function closeResult() {
 }
 
 function onClick() {
-	console.log(window.location)
 	const modalAnimal = document.getElementById('res-animal');
 	const modalImg = document.getElementById('Animal-img');
 	const modalSpeed = document.getElementById('res-speed');
@@ -252,13 +314,26 @@ function onClick() {
 			modal.showModal()
 			isModalOpen = true
 			refreshBut.style.scale=1;
-			
 			localStorage.getItem("record");
-			if (i > localStorage.record) {
-				localStorage.setItem("record", i);
-			}
-			
-			record.innerHTML = 'Рекорд: ' + localStorage.record + ' км/ч'
+//			console.log(isAvail())
+			console.log(work())
+
+//			setToLeaderBoard(i)
+			// if (
+			// 	i > getToLeaderBoardPlayer() ||
+			// 	getToLeaderBoardPlayer() == undefined
+			// ) {
+			// 	setToLeaderBoard(i);
+				
+			// }
+			// if (i > localStorage.record || localStorage.record == undefined) {
+			// 	localStorage.setItem('record', i)
+			// }
+
+			record.innerHTML = 'Рекорд: ' + bestRes + ' км/ч'
+
+
+//			record.innerHTML = 'Рекорд: ' + getToLeaderBoardPlayer() + ' км/ч'
 
 //			let textInput = document.getElementById("userName");
 //			let nameGamer = textInput.value;
