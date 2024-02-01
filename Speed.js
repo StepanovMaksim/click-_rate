@@ -84,6 +84,7 @@ let i=0,
 	oh =0,
 	forAdv = 0,
 	bestRes =0,
+	isRegist = false,
  	rz = 2;
 	u[11]=0;
 
@@ -205,27 +206,22 @@ function setToLeaderBoard(bestRes) {
 
 	}))
 }
-function isAvail() {
-	YaGames.init().then(ysdk =>
+const isAvail = async () => {
+	const auth = await YaGames.init().then(ysdk =>
 		ysdk.isAvailableMethod('leaderboards.setLeaderboardScore')
 	)
+
+	isRegist = auth
 }
 
 const work = async () => {
 	const lb = await YaGames.init().then(ysdk => ysdk.getLeaderboards())
-	try {
-		const res = await lb.getLeaderboardPlayerEntry('SumClick')
-	} catch (err) {
-		if (err.code === 'LEADERBOARD_PLAYER_NOT_PRESENT') {
-			// Срабатывает, если у игрока нет записи в лидерборде
-		}
-	}
-	bestRes = res.store;
-	console.log('значение:' +res)
+	
+	const res = await lb.getLeaderboardPlayerEntry('SumClick')
+
+	bestRes = res.score;
 }
 
-
-work();
 // function translate() {
 // 	return document.getElementsByTagName( "html" )[0].lang == 'en' 
 // 			?	console.log(1) 
@@ -238,12 +234,12 @@ function init() {
 //	sortList();	
 	graf(0, 1, 50, 25, 250);
 //	translate()
-
 	YaGames.init().then(ysdk => {
 		console.log('Yandex SDK initialized')
 		window.ysdk = ysdk
 		initPlayer();
 		initLib();
+		
 	})
 	
 
@@ -269,6 +265,7 @@ function closeResult() {
 }
 
 function onClick() {
+	
 	const modalAnimal = document.getElementById('res-animal');
 	const modalImg = document.getElementById('Animal-img');
 	const modalSpeed = document.getElementById('res-speed');
@@ -279,7 +276,9 @@ function onClick() {
 	k=1;	
 	if (j > 10.9) {
 		j--;
-		refreshBut.style.scale=0
+		refreshBut.style.scale=0;
+		work();
+		isAvail();
 	}
 	
 	const messageTime = document.getElementById('time');
@@ -315,8 +314,19 @@ function onClick() {
 			isModalOpen = true
 			refreshBut.style.scale=1;
 			localStorage.getItem("record");
-//			console.log(isAvail())
-			console.log(work())
+			if (isRegist) {
+				if (i > bestRes || bestRes==undefined) {
+					setToLeaderBoard(i);
+					record.innerHTML = 'Рекорд: ' + i + ' км/ч';
+				} else {record.innerHTML = 'Рекорд: ' + bestRes + ' км/ч'};
+			} else { 
+				if (i > localStorage.record || localStorage.record == undefined) {
+					localStorage.setItem('record', i);
+					record.innerHTML = 'Рекорд: ' + i + ' км/ч';
+				} else {record.innerHTML = 'Рекорд: ' + localStorage.record + ' км/ч'}
+
+			}
+			
 
 //			setToLeaderBoard(i)
 			// if (
@@ -329,8 +339,6 @@ function onClick() {
 			// if (i > localStorage.record || localStorage.record == undefined) {
 			// 	localStorage.setItem('record', i)
 			// }
-
-			record.innerHTML = 'Рекорд: ' + bestRes + ' км/ч'
 
 
 //			record.innerHTML = 'Рекорд: ' + getToLeaderBoardPlayer() + ' км/ч'
