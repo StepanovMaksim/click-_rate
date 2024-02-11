@@ -213,19 +213,18 @@ function isAvail() {
 
 const work = async () => {
 	const lb = await YaGames.init().then(ysdk => ysdk.getLeaderboards())
-	try {
-		const res = await lb.getLeaderboardPlayerEntry('SumClick')
-	} catch (err) {
-		if (err.code === 'LEADERBOARD_PLAYER_NOT_PRESENT') {
-			// Срабатывает, если у игрока нет записи в лидерборде
-		}
-	}
-	bestRes = res.store;
-	console.log('значение:' +res)
+	
+	const res1 = await lb
+		.getLeaderboardPlayerEntry('SumClick')
+		.then(res => res.score)
+	 
+	return res1
 }
 
 
 work();
+
+bestRes = work();
 // function translate() {
 // 	return document.getElementsByTagName( "html" )[0].lang == 'en' 
 // 			?	console.log(1) 
